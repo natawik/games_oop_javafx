@@ -70,8 +70,15 @@ public class Logic {
 
     public boolean isWin() {
         int[][] table = this.convert();
-        boolean result = false;
-        return result;
+        int counter = 0;
+        for (int[] row : table) {
+            for (int column : row) {
+                if (row[column] == 1 && column == 1) {
+                    counter++;
+                }
+            }
+        }
+        return counter == size;
     }
 
     public int[][] convert() {
